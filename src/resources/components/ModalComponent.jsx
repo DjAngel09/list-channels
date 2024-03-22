@@ -4,7 +4,7 @@ export const ModalComponent = ({ children, open = false, setOpenModal }) => {
     return (
         <>
             {open ? (
-                <div className="">
+                <div className="animate__animated animate__fadeIn">
                     <button
                         onClick={() => setOpenModal(false)}
                         className='fixed top-4 text-white cursor-pointer right-4 z-20 text-2xl'

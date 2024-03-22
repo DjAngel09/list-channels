@@ -11,8 +11,8 @@ export const ChannelsComponent = ({ channels = [], setEvent }) => {
         <div className='w-[208px] text-white bg-black pt-1 border border-[#585858]'>
           <p>HOY</p>
         </div>
-        {hours.map(hour => (
-          <div className='w-[150px] text-white bg-black py-1 border border-[#585858]'>
+        {hours.map((hour, index) => (
+          <div key={index} className='w-[150px] text-white bg-black py-1 border border-[#585858]'>
             <p>{hour}</p>
           </div>
         ))}
@@ -21,7 +21,7 @@ export const ChannelsComponent = ({ channels = [], setEvent }) => {
         <div className='w-[200px]'>
           {
             channels.map((channel, index) => (
-              <div className='flex items-center bg-[#1a1a1a] px-2 rounded-lg my-2 h-20 justify-center' >
+              <div key={channel.id} className='flex items-center bg-[#1a1a1a] px-2 rounded-lg my-2 h-20 justify-center' >
                 <p>{channel.number}</p>
                 <img className='max-w-[120px]' src={channel.image} alt={channel.name} />
               </div>
@@ -31,7 +31,7 @@ export const ChannelsComponent = ({ channels = [], setEvent }) => {
         <div className='pt-2' >
           {
             channels.map((channel, index) => (
-              <EventsComponent channel={channel} setEvent={setEvent} />
+              <EventsComponent key={channel.id * index} channel={channel} setEvent={setEvent} />
             ))
           }
         </div>
