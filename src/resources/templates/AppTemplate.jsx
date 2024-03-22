@@ -9,6 +9,7 @@ export const AppTemplate = () => {
   const [channels, setChannels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [event, setEvent] = useState({});
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
 
@@ -36,14 +37,17 @@ export const AppTemplate = () => {
     <>
       {loading ? <h1>Cargando...</h1> :
 
-        <ModalComponent open={true} >
+        <>
+          <button onClick={() => setOpenModal(!openModal)} >Abrir Modal</button>
+          <ModalComponent open={openModal} setOpenModal={setOpenModal} >
 
-          <div>
-            <InfoEvent event={event} />
-            <ChannelsComponent channels={channels} setEvent={setEvent} />
-          </div>
+            <div>
+              <InfoEvent event={event} />
+              <ChannelsComponent channels={channels} setEvent={setEvent} />
+            </div>
 
-        </ModalComponent>
+          </ModalComponent>
+        </>
 
       }
     </>

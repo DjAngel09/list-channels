@@ -7,7 +7,7 @@ export const EventsComponent = ({ channel, setEvent }) => {
 
   useEffect(() => {
     setEvents(formatEvents(channel.events));
-  }, [])
+  }, [channel.events])
 
 
   return (
