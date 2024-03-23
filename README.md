@@ -1,6 +1,6 @@
 # Frontend Claro video 📺
 
-![screenshot](/public/img/clarovideo.png)
+![screenshot](/public/result.png)
 
 [See app](https://claro-video-tv.vercel.app/) 👀
 
