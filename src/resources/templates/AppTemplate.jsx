@@ -35,10 +35,18 @@ export const AppTemplate = () => {
 
   return (
     <>
-      {loading ? <h1>Cargando...</h1> :
+      {loading ?
+        <div class="flex justify-center items-center h-screen">
+          <div class="rounded-full h-20 w-20 bg-violet-800 animate-ping"></div>
+        </div>
+        :
 
         <>
-          <button className='m-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' onClick={() => setOpenModal(!openModal)} >Abrir Modal</button>
+          <button
+            className='m-6 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
+            onClick={() => setOpenModal(!openModal)} >
+            Mostrar EPG
+          </button>
           <ModalComponent open={openModal} setOpenModal={setOpenModal} >
 
             <div>
